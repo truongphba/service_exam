@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Sell Products</h1>
+<form action="#" th:action="@{/products/sell}" th:object="${products}" method="post">
+    <label>Product Name: </label>
+    <select name="product_id">
+        <option th:each="i: ${products}"  th:value="${st.id}" th:text="${st.name}"></option>
+    </select>
+    <br>
+    <label>Quantity: </label> <input type="text"  th:field="*{quantity}"><br>
+    <button>Submit</button>
+</form>
+</body>
+</html>
